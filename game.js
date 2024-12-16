@@ -62,6 +62,18 @@ function loadBecScript(env) {
     } else {
       console.warn('TE is not defined or configureOfferWallStyle is missing.');
     }
+    // add blacklist ads - examples values
+    if (TE && typeof TE.setBlacklistAds === 'function') {
+      TE.setBlacklistAds([
+      'SEED App - Mine SEED', // ad name 
+      '66ec39da467ed0b3fdea3539', // ad id
+      '6724665873652075dc5b388f', // ad id
+      '123', // ad name 
+      'trung test 3' // ad name
+      ]);
+    } else {
+        console.warn("TE.setBlacklistAds function not available");
+    }
   });
   document.addEventListener('TEAdClicked', function (event) {
       const adInfo = event?.detail;

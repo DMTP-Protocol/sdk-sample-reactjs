@@ -63,6 +63,11 @@ function loadBecScript(env) {
       console.warn('TE is not defined or configureOfferWallStyle is missing.');
     }
   });
+  document.addEventListener('TEAdClicked', function (event) {
+      const adInfo = event?.detail;
+      console.log('TEAdClicked',adInfo);
+      alert('TEAdClicked=> ad: ' + JSON.stringify(adInfo || {}));
+  });
 }
 const { useState, useEffect, useCallback } = React;
 
